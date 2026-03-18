@@ -1,0 +1,146 @@
+:root {
+  --bg: #040711;
+  --surface: #0c1428;
+  --text: #eef5ff;
+  --muted: #9fb0c7;
+  --accent: #34d399;
+  --line: rgba(150, 184, 255, 0.22);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% -8%, rgba(52, 211, 153, 0.24), transparent 34%),
+    radial-gradient(circle at 88% 105%, rgba(56, 189, 248, 0.2), transparent 36%),
+    var(--bg);
+}
+
+.wrap {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 0;
+}
+
+.logo,
+nav a,
+.pill {
+  text-decoration: none;
+}
+
+.logo {
+  color: var(--text);
+  font-family: "Unbounded", sans-serif;
+  font-size: 1rem;
+}
+
+nav {
+  justify-self: center;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a { color: var(--muted); }
+
+.pill {
+  color: #032418;
+  background: var(--accent);
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.hero {
+  padding: 3.2rem 0 2rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+}
+
+h1,
+h2 {
+  font-family: "Unbounded", sans-serif;
+  margin: 0.4rem 0 0.8rem;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  max-width: 12ch;
+}
+
+.hero p {
+  max-width: 56ch;
+  color: var(--muted);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.services article,
+.cases,
+.contact {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.services p,
+.cases li {
+  color: var(--muted);
+}
+
+.cases,
+.contact {
+  margin-top: 0.8rem;
+}
+
+.cases ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+footer {
+  color: var(--muted);
+  padding: 1.8rem 0;
+}
+
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  nav {
+    justify-self: start;
+    flex-wrap: wrap;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
