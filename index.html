@@ -10,54 +10,84 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="wrap header">
-      <a class="logo" href="#">NOVA GRID</a>
-      <nav>
+    <div class="bg-layer"></div>
+    <header class="site-header container">
+      <a class="brand" href="#top">NOVA GRID</a>
+      <button class="menu-toggle" aria-expanded="false" aria-label="メニュー">☰</button>
+      <nav class="nav-links">
         <a href="#services">Services</a>
-        <a href="#cases">Cases</a>
+        <a href="#process">Process</a>
+        <a href="#results">Results</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="pill" href="#contact">相談する</a>
     </header>
 
-    <main class="wrap">
-      <section class="hero">
-        <p class="eyebrow">AI CONSULTING FOR GROWTH TEAMS</p>
-        <h1>生成AIを、PoCで終わらせない。</h1>
-        <p>業務棚卸しからワークフロー実装、定着支援まで。ROIに繋がる形でAI活用を設計します。</p>
+    <main id="top" class="container">
+      <section class="hero reveal">
+        <span class="badge">AI CONSULTING FOR GROWTH TEAMS</span>
+        <div class="hero-grid">
+          <div>
+            <h1>生成AIを、PoCで終わらせない。</h1>
+            <p class="lead">業務棚卸しからワークフロー実装、運用定着まで支援。ROIに直結する導入シナリオを設計します。</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#contact">無料相談する</a>
+              <a class="btn ghost" href="#services">支援内容を見る</a>
+            </div>
+          </div>
+          <aside class="hero-stats">
+            <article><strong data-count="42" data-suffix="%">0%</strong><span>平均工数削減率</span></article>
+            <article><strong data-count="30" data-suffix="日">0日</strong><span>最短実装リードタイム</span></article>
+            <article><strong data-count="91" data-suffix="%">0%</strong><span>運用定着率</span></article>
+          </aside>
+        </div>
       </section>
 
-      <section class="services" id="services">
-        <article>
-          <h2>AI Strategy</h2>
-          <p>現場業務を分解し、導入優先度を可視化します。</p>
-        </article>
-        <article>
-          <h2>Workflow Build</h2>
-          <p>API連携・自動化・評価指標を含めて実装します。</p>
-        </article>
-        <article>
-          <h2>Team Enablement</h2>
-          <p>運用ルール策定と社内トレーニングを提供します。</p>
-        </article>
+      <section class="section reveal" id="services">
+        <div class="section-head"><span class="eyebrow">SERVICES</span><h2>支援内容</h2></div>
+        <div class="card-grid three">
+          <article class="card"><h3>AI Strategy</h3><p>業務単位で導入優先度を整理し、ロードマップ化。</p><strong>3週間</strong></article>
+          <article class="card"><h3>Workflow Build</h3><p>API連携・自動化・評価指標まで含めて実装。</p><strong>6〜8週間</strong></article>
+          <article class="card"><h3>Team Enablement</h3><p>運用ルールとトレーニングで定着を支援。</p><strong>継続伴走</strong></article>
+        </div>
       </section>
 
-      <section class="cases" id="cases">
-        <h2>Recent Outcomes</h2>
-        <ul>
-          <li>問い合わせ一次対応を自動化し、工数を42%削減</li>
-          <li>提案書作成時間を平均3.1時間短縮</li>
-          <li>議事録要約のレビューコストを半減</li>
-        </ul>
+      <section class="section reveal" id="process">
+        <div class="section-head"><span class="eyebrow">PROCESS</span><h2>プロジェクトの進め方</h2></div>
+        <div class="process-list">
+          <article><h3>診断</h3><p>現場業務のボトルネックとデータ構造を可視化。</p></article>
+          <article><h3>実装</h3><p>小さく導入し、効果測定しながら拡張。</p></article>
+          <article><h3>定着</h3><p>社内ガイドラインとレビュー体制を整備。</p></article>
+        </div>
       </section>
 
-      <section class="contact" id="contact">
-        <h2>無料相談</h2>
-        <a href="mailto:hello@novagrid.ai">hello@novagrid.ai</a>
+      <section class="section reveal" id="results">
+        <div class="section-head"><span class="eyebrow">RECENT RESULTS</span><h2>導入成果</h2></div>
+        <div class="review-grid">
+          <blockquote>「問い合わせ一次対応の自動化で工数42%削減。」</blockquote>
+          <blockquote>「提案書作成時間を平均3.1時間短縮。」</blockquote>
+          <blockquote>「議事録要約のレビューコストを半減。」</blockquote>
+        </div>
+      </section>
+
+      <section class="section reveal" id="contact">
+        <div class="contact-panel">
+          <div>
+            <span class="eyebrow">CONTACT</span>
+            <h2>無料相談の申し込み</h2>
+            <p>課題と対象業務を送信ください。実装イメージと優先度案を提示します。</p>
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="会社名 / お名前" required />
+            <input type="email" placeholder="メールアドレス" required />
+            <textarea placeholder="現在の課題・対象業務"></textarea>
+            <button type="submit" class="btn primary">相談する</button>
+          </form>
+        </div>
       </section>
     </main>
 
-    <footer class="wrap">© <span id="year"></span> NOVA GRID</footer>
+    <footer class="container">© <span id="year"></span> NOVA GRID</footer>
+    <div class="toast" id="toast">お問い合わせありがとうございます。担当コンサルタントより連絡します。</div>
     <script src="app.js"></script>
   </body>
 </html>
